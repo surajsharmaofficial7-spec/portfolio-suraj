@@ -14,7 +14,7 @@ export async function getProjects() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        query: `{ projects(first: 10, where:{orderby:{field:DATE, order:ASC}}) { nodes { title projectDetails { description tags liveUrl } } } }`,
+        query: `{ projects(first: 10, where:{orderby:{field:DATE, order:ASC}}) { nodes { title projectDetails { description tags liveUrl image { node { sourceUrl } } } } } }`,
       }),
       next: { revalidate: 60 },
     });
