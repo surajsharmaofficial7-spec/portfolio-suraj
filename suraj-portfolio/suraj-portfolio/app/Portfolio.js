@@ -56,9 +56,13 @@ export default function Portfolio({ projects }) {
         <div className="hwrap" id="hwrap">
           <div className="htrack" id="htrack">
             {projects.map((p, i) => (
-              <a key={p.title} className="proj" href={p.projectDetails?.liveUrl || "#"} target="_blank" rel="noopener noreferrer">
+              <a key={p.title} className={"proj" + (p.projectDetails?.image?.node?.sourceUrl ? " has-img" : "")} href={p.projectDetails?.liveUrl || "#"} target="_blank" rel="noopener noreferrer">
                 <span className="go">↗</span>
-                <div className="n serif">{String(i + 1).padStart(2, "0")}</div>
+                {p.projectDetails?.image?.node?.sourceUrl ? (
+                  <img className="shot" src={p.projectDetails.image.node.sourceUrl} alt={p.title} loading="lazy" />
+                ) : (
+                  <div className="n serif">{String(i + 1).padStart(2, "0")}</div>
+                )}
                 <div>
                   <h3 className="serif">{p.title}</h3>
                   <p>{p.projectDetails?.description}</p>

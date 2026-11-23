@@ -20,6 +20,10 @@ h1 em{color:var(--mute)}
 .htrack{display:flex;gap:2.5vw;padding:2vh 5vw 10vh;width:max-content}
 .proj{width:min(64vw,760px);height:62vh;min-height:380px;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:36px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 .proj:hover{transform:translateY(-8px)}
+.proj .shot{width:100%;height:58%;object-fit:cover;object-position:top;border-radius:16px;border:1px solid var(--line);display:block}
+.proj.has-img{padding:20px 20px 28px}
+.proj.has-img .go{top:34px;right:34px}
+.proj.has-img h3,.proj.has-img p,.proj.has-img .tags{padding:0 8px}
 .proj .n{font-size:clamp(90px,14vw,200px);line-height:.8;color:var(--line);letter-spacing:-.05em}
 .proj h3{font-size:clamp(26px,3.2vw,44px);letter-spacing:-.02em;line-height:1.1;font-weight:500}
 .proj p{color:var(--mute);margin-top:10px;max-width:440px;font-size:15px}
